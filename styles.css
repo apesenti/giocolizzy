@@ -1,0 +1,176 @@
+/* =========================================
+   Cute Love Theme (Green + Red accents)
+   - Pixel-crisp canvas
+   - Softer mint background
+   - Modal in cute mint + love-pink accents
+   ========================================= */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* Cute mint gradient */
+    background: radial-gradient(1200px 700px at 30% 20%, #eafff1 0%, #dff7e8 40%, #cfeedd 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  
+  #game-container {
+    width: min(1200px, 100vw);
+    height: min(700px, 100vh);
+  }
+  
+  /* CRISP PIXEL RENDERING */
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+  
+  /* =========================================
+     Modal Styles
+     ========================================= */
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 20, 14, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: linear-gradient(180deg, #e9fff0 0%, #d7f7e4 100%);
+    border: 2px solid rgba(31, 107, 58, 0.25);
+    padding: 26px;
+    border-radius: 20px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    max-width: 520px;
+    width: 92%;
+    text-align: center;
+    animation: modalAppear 0.25s ease-out;
+  }
+  
+  @keyframes modalAppear {
+    from {
+      opacity: 0;
+      transform: scale(0.97) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .modal-message {
+    font-size: 1.15rem;
+    color: #1f6b3a; /* deep green */
+    margin-bottom: 14px;
+    line-height: 1.5;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Buttons */
+  .modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: transform 0.12s ease, filter 0.12s ease;
+    font-weight: 750;
+  }
+  
+  .btn-primary {
+    background: #27c46b; /* mint green */
+    color: #062112;
+    box-shadow: 0 10px 22px rgba(39, 196, 107, 0.25);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+  
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.65);
+    color: #1f6b3a;
+    border: 1px solid rgba(255, 77, 109, 0.35); /* love pink border */
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
+  
+  /* Flip animation */
+  .flip-animation {
+    animation: flipCard 0.5s ease-in-out;
+  }
+  
+  @keyframes flipCard {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(90deg) scale(0.95);
+    }
+    100% {
+      transform: rotateY(0deg) scale(1);
+    }
+  }
+  
+  /* =========================================
+     Admin reset indicator
+     ========================================= */
+  .admin-reset {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: #27c46b;
+    color: #062112;
+    padding: 10px 12px;
+    border-radius: 12px;
+    z-index: 2000;
+    font-weight: 850;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(31, 107, 58, 0.15);
+  }
+  
+  .admin-reset.hidden {
+    display: none;
+  }
+  
+  /* Optional: make links inside modal look cute if you ever add them */
+  .modal a {
+    color: #ff4d6d;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .modal a:hover {
+    text-decoration: underline;
+  }
+  

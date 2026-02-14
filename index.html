@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giochino per Lizzy 💚</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <div id="envelope-modal" class="modal hidden">
+    <div class="modal-content">
+      <div id="modal-message" class="modal-message"></div>
+      <div class="modal-buttons">
+        <button id="flip-button" class="btn-primary">Gira il biglietto 💚</button>
+        <button id="close-button" class="btn-secondary">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="admin-reset" class="admin-reset hidden">
+    <p>Progresso resettato!</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
