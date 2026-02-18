@@ -19,7 +19,7 @@ const ENVELOPE_DATA = [
 // ============================================
 const STORAGE_KEY = "giftGameOpened";
 // Anniversario (mese 1-12)
-const ANNIVERSARY = { day: 21, month: 3 }; // esempio: 21 Marzo
+const ANNIVERSARY = { day: 21, month: 2 }; // esempio: 21 Febbraio
 const ANNIVERSARY_ENVELOPE_ID = 6;
 
 
