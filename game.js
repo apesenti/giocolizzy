@@ -150,25 +150,47 @@ if (!canOpenEnvelope(currentEnvelope.id)) {
     modalMessage.classList.add("flip-animation");
 
     setTimeout(() => {
-        modalMessage.innerHTML = `
+
+    let contentHTML;
+
+    // caso speciale busta 6
+    if (currentEnvelope.id === 6) {
+        contentHTML = `
+        <div>
+          <p style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔗</p>
+          <p style="font-weight: bold; font-size: 1.2rem;">
+            APRI QUESTO LINK
+          </p>
+          <a href="https://www.tuosito.it" target="_blank"
+             style="color:#2ecc71; font-weight:bold; text-decoration:underline;">
+             www.tuosito.it
+          </a>
+        </div>
+        `;
+    } else {
+        contentHTML = `
         <div>
           <p style="font-size: 1.5rem; margin-bottom: 0.5rem;">💚</p>
           <p style="font-weight: bold; font-size: 1.3rem;">
             Apri il pacco numero ${currentEnvelope.package}
           </p>
         </div>
-      `;
-        modalMessage.classList.remove("flip-animation");
+        `;
+    }
 
-        saveOpenedEnvelope(currentEnvelope.id);
-        if (window.gameScene?.sfxOpen) window.gameScene.sfxOpen.play();
+    modalMessage.innerHTML = contentHTML;
+    modalMessage.classList.remove("flip-animation");
 
-        if (window.gameScene) {
-            markEnvelopeOpened(currentEnvelope.id);
-        }
+    saveOpenedEnvelope(currentEnvelope.id);
+    if (window.gameScene?.sfxOpen) window.gameScene.sfxOpen.play();
 
-        flipButton.style.display = "none";
-    }, 250);
+    if (window.gameScene) {
+        markEnvelopeOpened(currentEnvelope.id);
+    }
+
+    flipButton.style.display = "none";
+
+}, 250);
 }
 
 flipButton.addEventListener("click", flipEnvelope);
