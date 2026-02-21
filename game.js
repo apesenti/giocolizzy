@@ -161,7 +161,7 @@ if (!canOpenEnvelope(currentEnvelope.id)) {
           <p style="font-weight: bold; font-size: 1.2rem;">
             APRI QUESTO LINK
           </p>
-          <a href="https://www.tuosito.it" target="_blank"
+          <a href="https://we.tl/t-E6iNAjPn9y" target="_blank"
              style="color:#2ecc71; font-weight:bold; text-decoration:underline;">
              www.tuosito.it
           </a>
